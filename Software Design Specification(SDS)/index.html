@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SDS What a trip</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1 id="x">What a Trip</h1>
+						<h2>Software Design Specification	</h2>
+						<p>CSE 327.1 Developed By</p>
+						 <p> Mohammad Mahabubul Hasan 1421274042 <br>Rifat Hossain 152087642</br>Arnab Rezvi 1430759642</br>Ahmed Aziz Nahin 1520476042</br>Khan Shamrat 1320492042<br>Shirjoy Malek 1511321042</br>Pritom Roy 1430378042</br>
+						
+				    
+						 <ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">What a Trip</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="#a">Introduction</a></li>
+							<li><a href="#b">Architecture Description</a></li>
+       			   			<li><a href="#c">Design</a></li>
+         	   				<li><a href=#d>Risk Assessment</a></li>	
+          	 			    <li><a href="implement.html">Implementation plan</a></li>
+						</ul>
+					
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+	    <article>
+			<h1 id="a">Introduction</h1>
+			<p>
+				
+			</p>
+<h3>Purpose</h3>
+<p>The purpose of this document is to give a detailed description of the development for the “What a Trip” software. It will illustrate the purpose and complete declaration for the development of system. It will also explain system constraints, interface and interactions with other external applications. This document is primarily intended to be proposed to a customer for its approval and a reference for developing the first version of the system for the development team</p>
+
+
+<h3>Intended Audience and Reading Suggestions</h3>
+<p>The intended audience of this Document is potential investors and also developers as they can see this and have a proper idea about the project. The suggested reading of this document is in order as presented and people who wants to have a quick look can have a look at the index and can easily find the material and have that</p>
+
+<h3>Product Scope</h3>
+<p>We are currently living in a time when the world is a global village and so people are more and more travelling to the different parts of this world. But travelling is not easy. It comes with hassles like booking flights and hotels and planning the trip efficiently and so on. That’s where our software comes in. It is our goal to make this software a one stop solution for all the travelling needs. We are planning to build a software that will be able to book flight and hotels as per requirements from the customer and will help to deal with planning the trip, taking all the hassles away from customers so that they can enjoy the trip.</p>
+
+<p>The software will have a both online and an android presence. We primarily hope to implement a one stop solution for travelling needs. By signing up in our website people can search for desired flights and hotels and book them at ease.</p>
+
+<p>They can search for flights via various parameters like class or date and time also book and cancel the flight as they wish.</p>
+
+<p>Same sort of function will be available for booking hotels like search based on quality of hotel and locations and various other parameters that will be discussed in detail in the next sections</p>
+
+<p>We are also aiming to make the software user friendly and useful from an employee perspective as they will be able to get the users data, suggest package and get details about various deal and show them with ease.</p>
+
+<p>Also we are also looking to implement and improve the software for admins giving them the tools necessary to maintain the software and interact and troubleshoot various aspect.</p>
+
+In the upcoming section all these will be discusses in detail.
+<p></p>
+
+<h3>Objective</h3>
+<p>
+	What a Trip will help the user to find hotels, tour deals, flights etc. and let them book flight tickets, book hotel room and buy tour packages. It will also show the user any nearby hotel close to their locations and let the user know about any good tour packages available at that location.
+</p>
+ </p>	
+ <p><a href="#x">Back to top</a></p>
+           	
+		</article>
+	
+		<article class="expanded">
+		<p>
+			
+		</p>
+		<p>
+		<a name="top"></a>
+
+
+			
+		</p>
+		<h1 id="b">System architecture description</h1>
+		<p>
+<p><img src="images/5.jpg" alt="Mountain View" style='height: 50%; width: 100%; object-fit: contain'></p>
+			
+		</p>
+
+            	
+            		<h3>Overview of modules / components</h3>
+            		<p>Our system is designed with extensibility and scalability in mind.  We are taking great care in designing a framework which can be updated easily.  Many of the anticipated changes to our system in future phases will only require adding new types of data and changing the user presentation code to make use of these new data.  The framework we have designed will only require "plugging in" these new types of data without refactoring the logic that passes the data over the network, retrieves and updates the database, etc.  There are four basic logical components of the system: the Database Engine, the Server Application, framework development and multi-platform interface.</p>
+
+			
+            
+
+<h3>Structure and relationships</h3>
+<p>
+<li>Existing source software: MySQL</li>
+<li>Hosts the backend database which is used for central data storage.</li>
+<li>Data can be easily implanted(input, process)</li>
+</p>
+
+<h3>Server Application</h3>
+<p>
+<li>Implemented in xampp</li>
+<li>Provides methods and procedures that can be invoked remotely by a client application via the server procedure proxy</li>
+<li>Retrieve data.</li>
+<li>Update data.</li>
+<li>Central process which can make all decisions that arise due to the distributed nature of this application.</li>
+<li>For instance, when a client wishes to book a hotel’s room, there may be conflicts that need to be resolved if another client book the same room at a time.</li>
+<li>The server can coordinate conflict resolution with the client application (which can ask the user questions, if necessary).</li>
+<li>Uses the class library package defined above (must have the same or newer library as the client application).
+</li>
+<p>
+<h3>Framework development</h3>
+<li>Implemented in Laravel.</li>
+<li>Contains all presentation logic.</li>
+<li>Interacts exclusively with the user.</li>
+<li>Uses the class library package defined above.</li>
+<li>Communicates with the server application through the server procedure proxy class contained in the class library</li>
+</p>
+<p>
+<h3>Multi-platform interface</h3>
+<li>Uses bootstrap for Web-based interface design</li>
+<li>Uses HTML, CSS for UI design.</li>
+<li>Uses android SDK for android platform app.</li>
+<li>Both platform uses same database.</li>
+</p>
+
+</p>
+
+
+ <h3>User interface issues</h3>
+
+<p>The user interface of the Project will be divided into three main sections: The "Administrator" application and the "Client" application. These actors will be able to perform various action. These actions are described below.</p>
+<h3>Administrator</h3>
+<p>
+	This actor will reside on the Project Server.  It will have the following basic layout:
+<h3>Login Screen</h3>
+ <p> This first screen will allow Administrator to protect access to the rest of the application.</p>
+<h3>Employee Management Screen</h3> 
+<p>This screen allows Administrator to enter new employees, who can then be assigned to do various jobs.</p>
+<p>Besides administrator can edit, add, and remove information of services to provide. Administrator will also have privileges to cancel, change or refund a booking.
+</p>
+ 
+</p>
+<h3>Client Application</h3>
+<p>This application will reside on the computers of all the users and will be the main interface to the database for all but Administrator.  It will have the following layout:
+<h3>Login Screen</h3> 
+<p> This lets any user log in to the application. Login is not necessary to book a service. User can use Facebook/Google profile to login.
+</p>
+<h3>Overview Screen for WEB</h3>
+<p>User can search any provided service to book/cancel. User can search for hotels/flights/cabs based on various criteria like fare rate, distance form center, type, amenities, scheduled time etc.  This screen includes</p>
+<li>An advance search view for searching hotels/flights/cabs.</li>
+<li>A tabbed list of the sections:  The tabs are "Hotels", "Flights", and "Cabs".  Any of the lists may be sorted by priority. A user may, clicking on a section, go to the particular site of those sections.</li>
+<li>A "login" button, which will allow any user to login. This will go to a login page where one can login using Facebook or google.</li> 
+<li>A "Book" button, which will allow a user to book his hotel/flight/cab.
+Overview screen for Android – User will also perform same kind of function for application of android. Three different pages will be there for hotels, flights, cabs. User can search, book, login if wanted and view services.</li>
+
+</p>
+<h3>Overview screen for Android</h3>
+<p> User will also perform same kind of function for application of android. Three different pages will be there for hotels, flights, cabs. User can search, book, login if wanted and view services.</p>
+
+</p>	<p><h1 id="c">Database Design</h1></p>
+<p><img src="images/6.png" alt="Mountain View" style='height: 50%; width: 100%; object-fit: contain'></p>
+		<p>
+			<p><h3>Approach:</h3><p>Our approach to designing the database to keep the relations as simple as we can. That meant that we tried to fit our entire database within compact classes that have simple relationship with one another. These classes will have the necessary attributes for identifying the required data for future usage and retrieval.</p>
+		</p>
+		<p><h2>Details of each table</h2></p>
+		<p><h3>User:</h3> The user class will have the necessary information regarding the user. We will use user_id as the primary key and will also store- name, email, password and phone number for future messaging purposes.
+</p>
+<h3>Hotel:</h3><p>This class will contain information about the hotels that our clients are staying in and also those that we will offer. Here the primary key will be hotel_name and the other attributes are location, no of bedroom, price range and also if a customer is staying in the hotel the check in and out information.</p>
+
+<h3>Airline:</h3> <p>This will contain information about the flight our clients what class are they flying also the information about date and destination. The primary key here will be flight_id.</p>
+<h3>User:</h3>
+<p>The user class will have the necessary information regarding the user. We will use user_id as the primary key and will also store- name, email, password and phone number for future messaging purposes.</p> 
+
+<h3>Cab Booking:</h3>
+<p>This class will contain information about the potential cab the client may hire. This will provide information about the cab like which company it is from and destination and pick up information along with unique cab_id and contact information. The cab_id will serve as the primary key for this class.</p>
+
+<h1>Component Design</h1>
+<h2>Class Description</h2>
+<h3>Subsystem 1</h3>
+<p>
+<h3>Class : User</h3>
+A user has name, email, password. This are variable. User class have three function (i.e booking, complain and search). They can complain about the service. They can search location of nearby place of hotel. 
+</p>
+<p><h2>Class Diagram</h2>
+<p><img src="images/1.jpg" alt="Mountain View" style='height: 50%; width: 40%; object-fit: contain'></p>
+<h2>Class Description</h2>
+<h3>Subsystem 2</h3>
+<p><h3>Class :user Registration</h3></p>
+<p>This class extend the User class. Only registered user Can booking flight and hotel.</p>
+</p>
+<p><h2>Class Diagram</h2>
+<p><img src="images/3.jpg" alt="Mountain View" style='height: 50%; width: 40%; object-fit: contain'></p>
+<h3>Class : Flight book</h3>
+<p>
+	Flight type, destination, date, time are the variable of this class. BookFlight is the only function of this class.
+
+</p>  
+<p><h2>Class Diagram</h2>
+<p><img src="images/4.jpg" alt="Mountain View" style='height: 50%; width: 40%; object-fit: contain'></p>
+<h3>Class : Hotel book</h3>
+<p>HotelType, destination, check_In, Check_out, time are the variable of this class.BookHotel is the only function of this class.</p>  
+</p>
+<p><h2>Class Diagram</h2>
+<p><img src="images/2.jpg" alt="Mountain View" style='height: 50%; width: 40%; object-fit: contain'></p>
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+	
+</p>
+<p></p>
+<h1>Interaction Design</h1>
+<h2>Hotel Booking</h2>
+<p><img src="images/7.jpg" alt="Mountain View" style='height: 50%; width: 100%; object-fit: contain'></p>
+<h2>Description</h2>
+<p>Considering the user already logged in, to book the hotel hotelBooking() method will be called which will cause a hotelBooking object to be created. It will search a hotel by user given parameters from database and return a suitable Hotel_Name to the object. Then it will send the Hotel_Name to the controller object which will control the rest of the booking processes.</p>
+<h2>Flight Booking</h2>
+<p><img src="images/8.jpg" alt="Mountain View" style='height: 50%; width: 100%; object-fit: contain'></p>
+<h2>Description</h2>
+<p>Considering the user already logged in, to book the flight flightBooking() method will be called which will cause a flightBooking object to be created. It will search a flight according to user given parameters from database and return a suitable Flight_ID to the object. Then it will send the Flight_ID to the controller object which will control the rest of the booking processes.</p>
+<a href="#x">Back to top</a>
+<p></p>
+<h1 id="d">Risk assessment</h1>
+<p>This section demonstrates most prominent features and explains how they can be used and the results they will give back to the use</p>
+<h3>Data lose</h3>
+<p>Data loss may occur due to many reasons (e.g. power outage, network problem etc.). The service will be implemented with backups of databases. 
+</p>
+<h3>Database not receiving a particular data</h3>
+
+<p>
+	The web service along with the android app shall have a safe guard. If and only if a database receives a data the client will get a conformation message. This will ensure that either a data will be received by a database or nothing.
+</p>
+<h3>Identity theft</h3>
+<p>Every login and transaction of a user shall be dealt with an authentication method. So that a user cannot use the service with a stolen or fake id or credit card.</p>
+
+	
+
+
+
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+</p>
+
+<h1 id="e"><a href="implement.html">Tentative Implementation Plan</h1>
+<p><img src="images/9.jpg" alt="Mountain View" style='height: 50%; width: 100%; object-fit: contain'></p>	
+<p>
+
+
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+
+
+</p>
+<p>
+	
+</p>
+</article>
+						
+
+	
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

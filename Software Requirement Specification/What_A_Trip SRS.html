@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<style type="text/css">@import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
+@font-face{
+	font-family: 'Orbitron';
+	src:url('../font/Orbitron-Regular.ttf');
+}
+/** global **/
+body {
+	margin:0px auto;
+	padding:0;
+	font-family: 'Oxygen', 'sans-serif';
+	font-size: 1.0em;
+	color:#333;
+	background:#fff;
+}
+* {
+	margin:0;
+	padding:0;
+}
+
+
+code, blockquote {
+	display:block;
+	border-left:5px solid #ddd;
+	padding:10px;
+	margin-bottom:20px;
+}
+blockquote p {
+	font-style:italic;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	margin:0;
+	height: 1%;
+}
+p {
+	line-height:1.9em;
+	margin-bottom:20px;
+}
+a {
+	color:#0D3C84;
+}
+a:hover {
+	color:#0C3A85;
+}
+a:focus {
+	outline:none;
+}
+a.button { 
+    background-color: #0B3170;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a.button:hover {
+	background-color: #092758;
+}
+
+a.button-reversed { 
+    background-color: #C2D7EF;
+    color: #0B3170;
+}
+
+a.button-reversed:hover {
+	background-color: #D7E5F4;
+}
+fieldset {
+	display:block;
+	border:none;
+	border-top:1px solid #e0e0e0;
+}
+fieldset legend {
+	font-weight:bold;
+	font-size:13px;
+	padding-right:10px;
+	color:#222;
+}
+fieldset form {
+	padding-top:15px;
+}
+fieldset p label {
+	float:left;
+	width:150px;
+	font-family:Oxygen, Arial, Helvetica, sans-serif;
+}
+fieldset form input, fieldset form select, fieldset form textarea {
+	padding:5px;
+	color:#333333;
+	font-size:13px;
+	font-family:Oxygen, Arial, Helvetica, sans-serif;
+	border:1px solid #ddd;
+}
+fieldset form input.formbutton {
+	background:#0C3A87;
+	border:none;
+	border-bottom:3px solid #082659;
+	color:#ffffff;
+	font-weight:bold;
+	padding:5px 10px;
+	font-size:13px;
+}
+h1 {
+	font-size:2.4em;
+}
+h2 {
+	color:#0B2F6B;
+	font-size:1.8em;
+	font-weight:bold;
+	letter-spacing:-1px;
+	padding:0 0 5px;
+	margin:0;
+}
+h3 {
+	color:#0D357B;
+	font-size:1.6em;
+	padding-bottom:10px;
+}
+h4 {
+	padding-bottom:10px;
+	font-size:1.4em;
+	color:#0C3A85;
+}
+h5 {
+	padding-bottom:10px;
+	font-size:1.2em;
+	color:#666666;
+}
+ul, ol {
+	margin:0 0 35px 35px;
+}
+li {
+	padding-bottom:5px;
+}
+
+
+/** wrapper **/
+div#wrapper {
+	margin:0px auto;
+	padding:0;
+}
+
+.width {
+	width:920px;
+	margin: 0 auto;
+}
+
+
+/** sitename **/
+div#sitename {
+	background-color: #04087C;
+	
+	
+	
+}
+
+div#sitename h1 {
+
+	letter-spacing:-3px;
+	margin:0;
+	font-size: 3.0em;
+	float: left;
+	padding:5px 0 5px;
+	font-family: 'Orbitron', sans-serif;
+	color: #ccc;
+
+ 	
+}
+div#sitename h1 a,
+div#sitename h1 a:hover {
+	color:#fff;
+	font-weight:bold;
+	text-shadow:0px 2px 2px #000;
+	text-decoration:none;
+	}
+
+
+nav {
+	float: right;
+	margin-top: 35px;
+
+	
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+	float: left;
+	display: block;
+	padding: 0;
+}
+
+
+nav ul li a {
+    color: #ccc;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 0;
+	margin: 5px 3px 0;
+	font-weight: normal;
+    padding: 4px 9px 4px;
+    text-decoration: none;
+	box-shadow:-1px 1px 0 transparent;
+}
+nav ul li.selected a,
+nav ul li.selected a:hover { 
+	color: #fff;
+	background-color: #000;
+	font-weight:bold;
+
+	margin: 8px 2px 0;
+	box-shadow: -1px 1px 0 #333;
+}
+
+
+nav ul li a:hover {
+	color: #fff;
+	text-decoration: none;
+
+}
+
+/** header **/
+
+header h2 {
+	color:#ffffff;
+	font-size: 1.9em;
+	padding-bottom:0;
+	letter-spacing:0;
+
+}
+header div.tagline {
+	color:#C2D7F9;
+	font-size:0.9em;
+}
+header div.tagline a {
+	color:#ffffff;
+}
+
+
+
+/** body **/
+section#body {
+	padding:10px 0;
+	background:#fff;
+}
+
+
+
+article {
+    padding: 10px 10px 20px 5px;
+	font-size: 1.0em;
+ }
+
+article h2 {
+    padding-bottom: 0;
+    font-size: 2.1em;
+}
+
+article .article-info {
+    color: #999;
+    font-size: 0.9em;
+    letter-spacing: -0.5px;
+    padding: 0 0 5px 0;
+}
+
+article .article-info a { 
+	color: #666;
+}
+
+
+
+.clear:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clear {
+	display: inline-block;
+}
+.clear {
+	display: block;
+}
+
+
+
+
+
+@media screen and (max-width: 740px) {
+
+	body { font-size: 0.9em; }	
+
+	#sitename { letter-spacing:-2px; text-align:center; }
+
+
+	.width { width:auto; padding-left: 10px; padding-right: 10px; }
+
+	.column-left, .column-right { margin:0 5px; }
+	
+	section#content, aside#sidebar { float: none; width: auto; }
+
+	footer .footer-content ul { width: auto; float: none; }
+}
+
+
+@media screen and (max-width: 540px) {
+
+	body { font-size: 0.8em; }
+
+	header, header h1 a, header h1 a:hover { text-align: center; padding: 10px 0 0 0; font-size: 1.1em; }
+
+	nav ul li { float: none; text-align:center;  }
+
+	nav ul li a { margin-top: 0; padding: 0.5em; }
+
+	nav { height: auto; position: relative; }
+
+}</style>
+<!-- saved from url=(0064)file:///C:/Users/sourav/Desktop/Arsenal/template_3312/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>What_A_Trip SRS</title>
+<link rel="stylesheet" href="./What_A_Trip SRS_files/styles.css" type="text/css">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+
+		<div id="sitename">
+			<div class="width">
+				<h1 id="x">What A Trip</h1>
+					<nav>
+					<ul>
+        					<li><a href="#a">Introduction</a></li>
+        	    			<li><a href="#b">Description</a></li>
+         	   				<li><a href=#c>External Inerface</a></li>
+          	  				<li><a href="#d">System Features</a></li>
+          	  				<li><a href="#e">NonFunctional Requirements</a></li>
+          	 				<li><a href="https://bitbucket.org/mhasan09/what_a_trip">BitBucket</a></li>
+          	 				<li><a href="#g">About</a></li>
+
+        				</ul>
+				</nav>
+	
+				<div class="clear"></div>
+			</div>
+		</div>
+	
+		<section id="body" class="width clear">
+			<aside id="sidebar" class="column-left">
+				<ul>
+             
+			
+			</aside>
+                		
+	    <article>
+			<h1 id="a">Introduction</h1>
+			<p>
+				
+			</p>
+<h3>1.1 Purpose</h3>
+<p>The purpose of this document is to give a detailed description of the requirements for the “What a Trip” software. It will illustrate the purpose and complete declaration for the development of system. It will also explain system constraints, interface and interactions with other external applications. This document is primarily intended to be proposed to a customer for its approval and a reference for developing the first version of the system for the development team</p>
+<h3>1.2 Document Conventions</h3>
+
+<p>The document is written in times new roman with font size 12 and the headlines used font size 14 and was bold letters. And the heading for each section uses font size 18 and is in bold letters.
+
+</p> 
+<h3>1.3	Intended Audience and Reading Suggestions</h3>
+<p>The intended audience of this Document is potential investors and also developers as they can see this and have a proper idea about the project. The suggested reading of this document is in order as presented and people who wants to have a quick look can have a look at the index and can easily find the material and have that</p>
+<h3>1.4	Product Scope</h3>
+<p>We are currently living in a time when the world is a global village and so people are more and more travelling to the different parts of this world. But travelling is not easy. It comes with hassles like booking flights and hotels and planning the trip efficiently and so on. That’s where out software comes in. It is our goal to make this software a one stop solution for all the travelling needs. We are planning to build a software that will be able to book flight and hotels as per requirements from the customer and will help to deal with planning the trip, taking all the hassles away from customers so that they can enjoy the trip.</p>
+
+<p>The software will have a both online and an android presence. We primarily hope to implement a one stop solution for travelling needs. By signing up in our website people can search for desired flights and hotels and book them at ease.</p>
+
+<p>They can search for flights via various parameters like class or date and time also book and cancel the flight as they wish.</p>
+
+<p>Same sort of function will be available for booking hotels like search based on quality of hotel and locations and various other parameters that will be discussed in detail in the next sections</p>
+
+<p>We are also aiming to make the software user friendly and useful from a employee perspective as they will be able to get the users data, suggest package and get details about various deal and show them with ease.</p>
+
+<p>Also we are also looking to implement and improve the software for admins giving them the tools necessary to maintain the software, and interact and troubleshoot various aspect.</p>
+
+In the upcoming section all these will be discusses in detail
+
+
+ </p>	
+           	
+		</article>
+	
+		<article class="expanded">
+		<p>
+			
+		</p>
+		<p>
+		<a name="top"></a>
+<a href="#x">Back to top</a>
+
+			
+		</p>
+		<h1 id="b">Description</h1>
+		<p>
+			
+		</p>
+
+            		<h3>2.1 Product Perspective:</h3>
+            		<p>This travel site is eventually intended for the travel lovers and people who want to go for a trip. People can use the site to know about exciting traveling destinations and make their way to travel more smother using the site. Website will be main user interface where users can plan his trip and also book a flight, hotel and know about the destinations.However, this web sitewill be only a part of a larger system. There will be database where all the user data is kept and allthe operations are done. An application based interface will also be developed for android platform. Website and an android application will only be the interface for the user to receive our service and plan for a remarkable trip.</p>
+
+</h2>
+			
+
+			
+            <p><img src="img/1.jpg" alt="Mountain View"></p>
+
+<h3>2.2 Product Functions: </h3>
+<p>To use the services of website and app, users are required to register or login user popular social/mail network. Whenever a new user registered, all the required data will be created in the database and a reservation feature will be assigned for the user. Registered user would get confirmation mail for registering. Later, user will be able to login and logout the system anytime he wants. Other users who would not register would see all the sites, packages and also would search but to book/reserve a service, they will need to log in.
+ Since every operation that user perform reflected to our database, user will find his wish list/history however he leaves last time. From the user point of view, user will feel to resume his preferences where he left. User will be able to search a hotel/flight based on various features of smart search like search by price, check in date, availability, amenities, distance from a place etc. User also can book a hotel/flight and pay instant or pay on stay/pay at airport. All of the preference/information users created will be kept in database.</p>
+ <p><img src="img/2.jpg" alt="Mountain View"></p>
+
+ <h3>2.3 USER CLASS and CHARACTERISTICS</h3>
+
+<p>Users of the system should be able to retrieve/book flight information/confirmation between two given cities with the given date/time of travel from the database. A route from city A to city B is a sequence of connecting flights from A to B such that: 
+
+<p>a) There are at most two connecting stops, the starting city and destination city of the trip.
+b) The connecting time is shown.</p>
+
+<p>The system will support two types of user privileges, Customer, and Employee. Customers will have access to customer functions, and the employees will have access to both customer and flight management functions.
+</p>
+<p>User functions should be;
+<li>Make new reservation</li>
+<li>Retrive Reservation</li>
+<li>Print ticket</li>
+
+<p>User can search Via</p>
+<li>Search flight</li>
+<li>One way/MultiCity</li>
+<li>Date/Time</li>
+<li>Class</li>
+<li>Confirmation</li>
+<li>Cancel Reservation</li>
+
+<p>Users can also book hotels choosing a location, room type, price range, amenities, availability etc. Here are two type of user as Customer and Admin. Customer will access customers function and admin both customer and administrative functions.
+</p>
+<p>
+User should be able to do the following functions:</p>
+<li>Search Hotel</li>
+<li>Book A hotel</li>
+<li>Provide personal information for reservation</li>
+<p>User can search via</p>
+<li>Search Hotel</li>
+<li>Location</li>
+<li>Room Type & number of persons</li>
+<li>Rating & Aminities</li>
+<li>Pay Now and Pay on stay</li>
+<li>Cancel Reservations</li>
+
+</p>
+
+<p>
+The Employee should have following management functionalities:
+
+</p>
+    <li>Get all user reservations</li>
+    <li>Get all details for hotel/flight</li>
+    <li>Calculate total fare/sell</li>
+    <li>Interact with flight/hotel</li> 
+    <li>Update user wish list/recommendation</li> 
+    <li>Suggest best package/offer</li> 
+
+<p>
+	
+
+</p>
+
+
+<p>
+	Admin Function:
+</p>
+
+   <li>Read all user database</li> 
+   <li>Add/cancel/remove user</li>
+   <li>Add/cancel booking</li>
+   <li>Add new hotel/flight</li>
+   <li>Update price on regular basis</li> 
+   <li>Interact with user for troubleshoot</li>
+   <p>
+   	
+   </p>
+
+</h3>
+
+<h3>2.4	Operating Environment</h3>
+
+<p>
+
+</p>
+		<li>System would have English writtensite to operate </li>
+		<li>System would have own database using MySQL</li>
+		<li>System would run on windows base OS and Linux (android) OS</li>
+		<li>System would be built on Laravel framework</li>
+		<li>System would use bootstrap for UI design</li>
+		<li>System would be cross platform (Android and web view)</li>
+		<li>System would be Client/server based</li>
+
+<p>
+<p><img src="img/10.jpg" alt="Mountain View">
+	
+</p>
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+
+
+
+</p>
+
+	<h1 id="c">3.External Interface Requirements</h1>
+	<p>  </p>
+<p>This service will take input from the user via keyboard and mouse. For voice search, the user need a microphone connected with their device.</p>
+<h3>3.1 User Interfaces</h3>
+<p>
+	
+</p>
+<p>The user interface is simple and the user can access all contents form the Homepage and other pages. The user does not need any additional training to use this service but the website has only one supported language which is English. So the users need to know English if they want to use this service. A sample of the user interface of the website is attached below.</p>
+
+<p><img src="img/4.jpg" alt="Mountain View" style='height: 100%; width: 100%; object-fit: contain'></p>
+<p>
+	
+</p>
+<p><img src="img/3.jpg" alt="Mountain View" style='height: 100%; width: 100%; object-fit: contain'></p>
+
+
+<p>This user interface is created with bootstraps and HTML to make it simple and accessible for both the users and the developers.</p>
+<p>
+	WhatATrip.com will have separate pages for hotel and flight booking which can be accessed from the navigation bar on top of the site.Both will provide the users with various filters using which the user can search for their desired deals. The filtering options will include area of the hotel, price range ,flight schedule etc.
+	<p>Users can sign up or sign in by clicking the links on top of the webpage. Users who sign in can also jump to their profiles and see the bookings they made and their current status if they did so already.</p>
+
+
+</p>
+<p>
+	
+</p>
+<h3>3.2 Hardware Interfaces</h3>
+<p>WhatATrip.com is a website that can be accessible by virtually every web browser. Smoothness of the user interface will vary according to the quality of the internet connection and the download and upload speeds of the device that the website is being accessed with.There will also be an android app which will give the same services </p>
+<p>
+	
+</p>
+<h3>3.3 Software Interfaces</h3>
+<p>
+The front-end of WhatATrip.com will be made using html,php and css and a utilizing a bootstrap template and a MySQL database will be made in phpmyadmin. The front-end and the back-end will then be connected using the Laravel framework, which utilizes the MVC pattern. MVC stands for Model-View-Controller. It helps to connect the front-end and back-end of a website or web application by organising the codes into three interconnected parts. The database is managed in the Model section, the front-end code is managed by the View section and finally the php code that connects the database to the front-end is managed by the Controller section. The resulting application will then hosted be on a server. Initial testing will be done by hosting on a WAMP Local Server.</p>
+<p>
+	
+</p>
+<h3>
+3.4 Communication Interfaces</h3>
+<p>Users can choose to directly sign up and log into WhatATrip.com, which will then send the data directly to our database or they can choose to sign in with their existing Facebook/Google accounts, which will be facilitated with the respective APIs.</p>
+
+<p>
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+	
+</p>
+
+<h1 id="d">4.System Features</h1>
+<p>This section demonstrates most prominent features and explains how they can be used and the results they will give back to the use</p>
+<h3>4.1 Book Hotel</h3>
+<p>This feature will help the users to book an available hotel room in the hotel of their choice.
+<h4>Expanded use case</h4>
+</p>
+<p><img src="img/5.jpg" alt="Mountain View"></p>
+<p>
+	Exception : If user is not log in then serve register page.
+</p>
+
+<p>
+	
+</p>
+<h3>4.2 Book Flight</h3>
+<p>User can use this feature to book flight, flight class etc to the destinations of their liking.</p>
+<p><img src="img/6.jpg" alt="Mountain View"></p>
+<p>Exception : If user doesn't log in then serve register page.</p>
+<p>
+	
+</p>
+<h3>4.3 Smart Finder</h3>
+<p>This feature will help the user to find hotels in a specific area where they want to stay.</p>
+<p><img src="img/7.jpg" alt="Mountain View" ></p>
+
+<h3>4.4 Travel Guide</h3>
+<p>Travel Guide will help the user to find any nearby hotel close to them.</p>
+<p><img src="img/8.jpg" alt="Mountain View" ></p>
+<p>
+	
+</p>
+
+<h3>4.5 Registration</h3>
+<p>User need to login to use this travel guide. They need to use their Facebook account to complete the registration for this service.</p>
+<p><img src="img/9.jpg" alt="Mountain View" ></p>
+<p>
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+</p>
+
+<h1 id="e">
+5. Non-functional requirements</h1>
+
+<p>
+	
+</p>
+<h3>5.1.Performance Requirements</h3>
+<p>The system shall function in real-time: any operation on the stored information, triggered
+by an user.
+The system shall allow simultaneous use by multiple users, without data corruption.
+For the mobile app the app must be supported on recent 3 to 4 versions of android. Also, it should not show any performance issues regardless of any features.
+</p>
+<p>
+	
+</p>
+<h3>5.2 Security Requirements</h3>
+<p>In order to use the service of the website, users must first authenticate themselves by
+name, email id, password, credit card info. The system shall not allow access if the user fails to provide correct login information. All kinds of transaction shall be monitored and validate by the authorized personnel. Any type of unethical means will not go unnoticed.
+Physical access to the computer(s) storing the users Database shall be restricted to
+authorized personnel.
+</p>
+<p>
+	
+</p>
+<h3>5.3 User Interface Requirements</h3>
+<p>The user interface of the application must be user-friendly, intuitive and easy to use,
+implementing the ergonomics standards.
+For the mobile platform the app should be user-friendly, well organized and easily understandable.
+</p>
+<p>
+	
+</p>
+
+<h3>5.3 Availability & Reliability</h3>
+<p>The software system could provide automatically generated backup (on external hard
+drives) containing all the stored information at the time the backup is taken. The system shall
+allow authorized users to restore the data from an existing backup.
+</p>
+<p>
+	
+</p>
+
+<h3 id="g">About</h3>
+<p>It was a group project SRS for CSE 327.1. Which is done by-
+<p>
+<li>Mohammad Mahabubul Hasan 1421274042</li>
+<li>Rifat Hossain 			 152087642</li>
+<li>Arnab Rezvi 			 1430759642</li>
+<li>Ahmed aziz nahin 	     1520476042</li>
+<li>khan shamrat             1320492042</li>
+<li>Shirjoy malek            1511321042</li>
+<li>Pritom Roy               1430378042</li>
+
+</p>
+<a name="top"></a>
+<a href="#x">Back to top</a>
+
+
+
+</p>
+<p>
+	
+</p>
+</article>
+
+<p></p>
+</body>
+</html>
