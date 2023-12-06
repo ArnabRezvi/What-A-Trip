@@ -1,51 +1,60 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# README #
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This README would normally document whatever steps are necessary to get your application up and running.
 
-## About Laravel
+#How to install
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Steps needed to create the necessary containers:-
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1.Download the laradock folder from here 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+https://drive.google.com/file/d/1yYmaU9eW_Qaxbm55iNMo904GHW4s8UvM/view?usp=sharing
 
-## Learning Laravel
+(ps: for some reasons we can't upload the laradock folder in Bitbucket , so that's why we did this)
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+2.Paste it inside What_a_Trip folder
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+3.Go to the laradock folder inside What_a_Trip and open the .env file
 
-## Laravel Sponsors
+4.Set the APP_CODE_PATH_HOST to the directory where the What_a_Trip folder is saved
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+5.Chose a directory for DATA_PATH_HOST where the docker container's data(like database) will be saved.
+The docker client must have access to this directory
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+6.Save the env file
 
-## Contributing
+7.Now open the directory of What_a_Trip from your command promt
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+8.Go to laradock folder(cd laradock)
 
-## Security Vulnerabilities
+9.Run this command on the command prompt to create and open all the necessary containers:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+docker-compose up -d nginx phpmyadmin mysql workspace redis
+	
+it will take some time to download the necessary libraries but once its done,it should successfully 
+make the containers and show a notification on cmd
 
-## License
+10.If all the above steps are done correctly you can now access our project from your browser by going to localhost
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+11.The phpmyadmin page can be accessed in localhost/8080 but if the port is blocked for some 
+reason we can change it to another port
+
+Exception-
+To change the port of phpmyadmin follow step 1 first.Once inside the .env file find the PHPmyadmin section.
+
+Change the PMA_PORT to a free port (8000 for example) and save.
+
+You should be able to go to use phpmyadmin at localhost:8000 now
+
+12.Every part of our project should function properly in this containerized environment
+except for laravel dusk checking as it needs it's drivers to work(probably can be fixed soon 
+if a dusk workable docker template)
+
+
+Steps needed to run unit tests: 
+
+1.Run the appropriate driver, chromedriver for linux operating system and chromedriver.exe for windows operating system.
+
+2.Go to the What_a_Trip folder using the command prompt and type in the following code 
+
+php artisan dusk
